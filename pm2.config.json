@@ -1,0 +1,10 @@
+{
+  "apps": [
+    {
+      "name": "matrix-media-logging-widget",
+      "script": "PORT=3046 node build",
+      "instances": 1,
+      "exec_mode": "fork"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="garden">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%sveltekit.assets%/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://unpkg.com/matrix-widget-api@1.1.1/dist/api.min.js"></script>
+    <script type="text/javascript">
+      const mxwidgets = window.mxwidgets();
+
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const widgetId = urlParams.get('widgetId');
+        console.log('Starting WidgetApi w/ widgetId=', widgetId);
+
+        // Set up the widget API as soon as possible to avoid problems with the client
+        const widgetApi = new mxwidgets.WidgetApi(widgetId);
+
+        widgetApi.requestCapability('org.matrix.msc2762.send.event:m.room.message');
+
+        window.__getWidgetApi = new Promise((resolve, reject) => {
+          widgetApi.on('ready', function () {
+            console.log('WidgetApi ready');
+            resolve(widgetApi);
+          });
+          // TODO handle failure case
+        });
+
+        // Start the widget as soon as possible too, otherwise the client might time us out.
+        widgetApi.start();
+      } catch (e) {
+        handleError(e);
+      }
+    </script>
+    %sveltekit.head%
+  </head>
+  <body>
+    <div>%sveltekit.body%</div>
+  </body>
+</html>
