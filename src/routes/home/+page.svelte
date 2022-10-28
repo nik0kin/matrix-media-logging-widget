@@ -65,7 +65,9 @@
   <meta name="description" content="A way to log media" />
 </svelte:head>
 
-<div class="media-logging-page">
+<section
+  class="bg-base-100 rounded-box mx-1 mb-4 flex flex-col items-center p-2 shadow-xl xl:mx-0 xl:w-full"
+>
   <div class="prose">
     <h1 class="mb-4">Media Logging</h1>
   </div>
@@ -130,16 +132,34 @@
   >
     Submit
   </button>
-</div>
+</section>
 
 <style>
-  .media-logging-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  section {
+    width: calc(100% - 0.5em);
+  }
+
+  h1 {
+    font-size: 1.75em;
+  }
+
+  @media (min-width: 350px) {
+    section {
+      width: 80%;
+      margin-top: 2em;
+    }
+
+    h1 {
+      font-size: 2.25em;
+    }
   }
 
   @media (min-width: 480px) {
+    section {
+      width: 400px;
+      margin: 1rem;
+    }
+
     h1.mb-4 {
       margin-bottom: 2rem;
     }

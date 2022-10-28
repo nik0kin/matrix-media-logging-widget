@@ -2,7 +2,7 @@
   import '../app.css';
 </script>
 
-<main>
+<main class="bg-base-300">
   <slot />
 </main>
 
@@ -12,16 +12,12 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 0.25rem;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.25rem;
     width: 100%;
-    max-width: 1024px;
+    height: 100vh;
     margin: 0 auto;
     box-sizing: border-box;
-  }
-
-  @media (min-width: 480px) {
-    main {
-      padding-top: 1rem;
-    }
   }
 </style>

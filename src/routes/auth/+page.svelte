@@ -55,7 +55,7 @@
 
 <div class="loading">
   <div class="prose">
-    <h1>Loading</h1>
+    <h1 class="p-2">Loading</h1>
   </div>
   {#if showUnsupportedClientMessage}
     <p>Your matrix client does not support authenticated widgets.</p>

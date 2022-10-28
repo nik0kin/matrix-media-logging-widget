@@ -4,24 +4,18 @@
 
 <slot />
 
-<footer>
-  <p>
-    <img class="tmdb-logo" alt="TheMobieDatabase logo" src={tmdbLogo} />
-    matrix-media-logging-widget uses the TMDB API but is not endorsed or certified by TMDB.
-  </p>
+<footer class="footer footer-center p-2 bg-base-200">
+  <img class="tmdb-logo" alt="TheMobieDatabase logo" src={tmdbLogo} />
+  <p>matrix-media-logging-widget uses the TMDB API but is not endorsed or certified by TMDB.</p>
 </footer>
 
 <style>
   footer {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-  }
-
-  footer p {
-    line-height: 2;
+    padding: 1.25em;
+    flex-shrink: 0;
   }
 
   .tmdb-logo {
@@ -31,7 +25,7 @@
 
   @media (min-width: 480px) {
     footer {
-      padding: 20px 0;
+      padding: 1.25em 0.5em;
     }
   }
 </style>
